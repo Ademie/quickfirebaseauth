@@ -22,4 +22,14 @@ class Auth {
     await _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
   }
+
+
+// Log out
+  Future<void> signOut() async {
+    try {
+      await _firebaseAuth.signOut();
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 }
